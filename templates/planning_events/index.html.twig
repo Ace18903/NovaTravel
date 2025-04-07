@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PlanningEvents index{% endblock %}
+
+{% block body %}
+    <h1>PlanningEvents index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for planning_event in planning_events %}
+            <tr>
+                <td>
+                    <a href="{{ path('app_planning_events_show', {'id_planning': planning_event.id_planning}) }}">show</a>
+                    <a href="{{ path('app_planning_events_edit', {'id_planning': planning_event.id_planning}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="1">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_planning_events_new') }}">Create new</a>
+{% endblock %}
