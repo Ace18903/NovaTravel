@@ -9,7 +9,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Date_reclamation</th>
+                <th>Date Reclamation</th>
                 <th>Type</th>
                 <th>Message</th>
                 <th>actions</th>
@@ -19,7 +19,9 @@
         {% for reclamation in reclamations %}
             <tr>
                 <td>{{ reclamation.id }}</td>
-                <td>{{ reclamation.date_reclamation }}</td>
+                <td>{{ reclamation.dateReclamation  }}
+
+</td>
                 <td>{{ reclamation.type }}</td>
                 <td>{{ reclamation.message }}</td>
                 <td>

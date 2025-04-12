@@ -10,7 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Message</th>
-                <th>Date_reponse</th>
+                <th>Date reponse</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -19,7 +19,7 @@
             <tr>
                 <td>{{ reponse.id }}</td>
                 <td>{{ reponse.message }}</td>
-                <td>{{ reponse.date_reponse ? reponse.date_reponse|date('Y-m-d') : '' }}</td>
+                <td>{{ reponse.dateReponse ? reponse.dateReponse|date('Y-m-d') : '' }}</td>
                 <td>
                     <a href="{{ path('app_reponse_show', {'id': reponse.id}) }}">show</a>
                     <a href="{{ path('app_reponse_edit', {'id': reponse.id}) }}">edit</a>

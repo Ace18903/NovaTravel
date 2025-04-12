@@ -17,20 +17,20 @@ class ReservationHebergement
     
         #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "reservation_hebergements")]
     #[ORM\JoinColumn(name: 'id_user', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    private User $id_user;
+    private User $idUser;
 
         #[ORM\ManyToOne(targetEntity: Hebergement::class, inversedBy: "reservation_hebergements")]
     #[ORM\JoinColumn(name: 'id_hebergement', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    private Hebergement $id_hebergement;
+    private Hebergement $idHebergement;
 
     #[ORM\Column(type: "date")]
-    private \DateTimeInterface $date_debut;
+    private \DateTimeInterface $dateDebut;
 
     #[ORM\Column(type: "date")]
-    private \DateTimeInterface $date_fin;
+    private \DateTimeInterface $dateFin;
 
     #[ORM\Column(type: "integer")]
-    private int $nb_perso;
+    private int $nbPerso;
 
     public function getId()
     {
@@ -42,53 +42,53 @@ class ReservationHebergement
         $this->id = $value;
     }
 
-    public function getId_user()
+    public function getIdUser()
     {
-        return $this->id_user;
+        return $this->idUser;
     }
 
-    public function setId_user($value)
+    public function setIdUser($value)
     {
-        $this->id_user = $value;
+        $this->idUser = $value;
     }
 
-    public function getId_hebergement()
+    public function getIdHebergement()
     {
-        return $this->id_hebergement;
+        return $this->idHebergement;
     }
 
-    public function setId_hebergement($value)
+    public function setIdHebergement($value)
     {
-        $this->id_hebergement = $value;
+        $this->idHebergement = $value;
     }
 
-    public function getDate_debut()
+    public function getDateDebut()
     {
-        return $this->date_debut;
+        return $this->dateDebut;
     }
 
-    public function setDate_debut($value)
+    public function setDateDebut($value)
     {
-        $this->date_debut = $value;
+        $this->dateDebut = $value;
     }
 
-    public function getDate_fin()
+    public function getDateFin()
     {
-        return $this->date_fin;
+        return $this->dateFin;
     }
 
-    public function setDate_fin($value)
+    public function setDateFin($value)
     {
-        $this->date_fin = $value;
+        $this->dateFin = $value;
     }
 
-    public function getNb_perso()
+    public function getNbPerso()
     {
-        return $this->nb_perso;
+        return $this->nbPerso;
     }
 
-    public function setNb_perso($value)
+    public function setNbPerso($value)
     {
-        $this->nb_perso = $value;
+        $this->nbPerso = $value;
     }
 }

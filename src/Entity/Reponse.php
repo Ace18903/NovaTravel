@@ -16,13 +16,13 @@ class Reponse
 
         #[ORM\ManyToOne(targetEntity: Reclamation::class, inversedBy: "reponses")]
     #[ORM\JoinColumn(name: 'id_reclamation', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    private Reclamation $id_reclamation;
+    private Reclamation $idReclamation;
 
     #[ORM\Column(type: "string", length: 255)]
     private string $message;
 
     #[ORM\Column(type: "date")]
-    private \DateTimeInterface $date_reponse;
+    private \DateTimeInterface $dateReponse;
 
     public function getId()
     {
@@ -34,14 +34,14 @@ class Reponse
         $this->id = $value;
     }
 
-    public function getId_reclamation()
+    public function getIdReclamation()
     {
-        return $this->id_reclamation;
+        return $this->idReclamation;
     }
 
-    public function setId_reclamation($value)
+    public function setIdReclamation($value)
     {
-        $this->id_reclamation = $value;
+        $this->idReclamation = $value;
     }
 
     public function getMessage()
@@ -54,13 +54,13 @@ class Reponse
         $this->message = $value;
     }
 
-    public function getDate_reponse()
+    public function getDateReponse()
     {
-        return $this->date_reponse;
+        return $this->dateReponse;
     }
 
-    public function setDate_reponse($value)
+    public function setDateReponse($value)
     {
-        $this->date_reponse = $value;
+        $this->dateReponse = $value;
     }
 }

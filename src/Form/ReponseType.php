@@ -8,6 +8,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ReponseType extends AbstractType
 {
@@ -16,10 +18,13 @@ class ReponseType extends AbstractType
         $builder
             ->add('id')
             ->add('message')
-            ->add('date_reponse', null, [
-                'widget' => 'single_text',
-            ])
-            ->add('id_reclamation', EntityType::class, [
+
+->add('dateReponse', DateType::class, [
+    'widget' => 'single_text',
+    'input' => 'datetime',
+    'required' => true, // makes sure null isn't submitted
+])
+->add('id_reclamation', EntityType::class, [
                 'class' => Reclamation::class,
                 'choice_label' => 'id',
             ])

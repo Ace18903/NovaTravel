@@ -18,10 +18,10 @@ class Reclamation
 
         #[ORM\ManyToOne(targetEntity: User::class, inversedBy: "reclamations")]
     #[ORM\JoinColumn(name: 'id_user', referencedColumnName: 'id', onDelete: 'CASCADE')]
-    private User $id_user;
+    private User $idUser;
 
     #[ORM\Column(type: "string", length: 255)]
-    private string $date_reclamation;
+    private string $dateReclamation;
 
     #[ORM\Column(type: "string", length: 255)]
     private string $type;
@@ -39,24 +39,24 @@ class Reclamation
         $this->id = $value;
     }
 
-    public function getId_user()
+    public function getIdUser()
     {
-        return $this->id_user;
+        return $this->idUser;
     }
 
-    public function setId_user($value)
+    public function setIdUser($value)
     {
-        $this->id_user = $value;
+        $this->idUser = $value;
     }
 
-    public function getDate_reclamation()
+    public function getDateReclamation()
     {
-        return $this->date_reclamation;
+        return $this->dateReclamation;
     }
 
-    public function setDate_reclamation($value)
+    public function setDateReclamation($value)
     {
-        $this->date_reclamation = $value;
+        $this->dateReclamation = $value;
     }
 
     public function getType()

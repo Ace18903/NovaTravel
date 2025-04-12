@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use App\Entity\Vol;
 
 #[ORM\Entity]
-#[ORM\Table(name: "vol_reservation")]
+#[ORM\Table(name: "reservation_vol")]
 class ReservationVol
 {
 
@@ -27,7 +27,7 @@ class ReservationVol
     private string $classe;
 
     #[ORM\Column(type: "integer")]
-    private int $nb_billets;
+    private int $nbBillets;
 
     public function getId()
     {
@@ -39,25 +39,28 @@ class ReservationVol
         $this->id = $value;
     }
 
-    public function getId_user()
-    {
-        return $this->id_user;
-    }
+    public function getIdUser(): User
+{
+    return $this->id_user;
+}
 
-    public function setId_user($value)
-    {
-        $this->id_user = $value;
-    }
+public function setIdUser(User $user): self
+{
+    $this->id_user = $user;
+    return $this;
+}
 
-    public function getId_vol()
-    {
-        return $this->id_vol;
-    }
 
-    public function setId_vol($value)
-    {
-        $this->id_vol = $value;
-    }
+public function getIdVol(): Vol
+{
+    return $this->id_vol;
+}
+
+public function setIdVol(Vol $vol): self
+{
+    $this->id_vol = $vol;
+    return $this;
+}
 
     public function getClasse()
     {
@@ -69,13 +72,15 @@ class ReservationVol
         $this->classe = $value;
     }
 
-    public function getNb_billets()
+    public function getNbBillets(): int
     {
-        return $this->nb_billets;
+        return $this->nbBillets;
     }
-
-    public function setNb_billets($value)
+    
+    public function setNbBillets(int $nbBillets): self
     {
-        $this->nb_billets = $value;
+        $this->nbBillets = $nbBillets;
+        return $this;
     }
+    
 }

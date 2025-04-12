@@ -10,7 +10,7 @@
             <tr>
                 <th>Id</th>
                 <th>Classe</th>
-                <th>Nb_billets</th>
+                <th>Nb billets</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -21,8 +21,8 @@
                 <td>{{ reservation_vol.classe }}</td>
                 <td>{{ reservation_vol.nbBillets }}</td>
                 <td>
-                    <a href="{{ path('app_yes_show', {'id': reservation_vol.id}) }}">show</a>
-                    <a href="{{ path('app_yes_edit', {'id': reservation_vol.id}) }}">edit</a>
+                    <a href="{{ path('app_reservation_vol_show', {'id': reservation_vol.id}) }}">show</a>
+                    <a href="{{ path('app_reservation_vol_edit', {'id': reservation_vol.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}
@@ -33,5 +33,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_yes_new') }}">Create new</a>
+    <a href="{{ path('app_reservation_vol_new') }}">Create new</a>
 {% endblock %}

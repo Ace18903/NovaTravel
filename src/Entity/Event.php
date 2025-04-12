@@ -107,17 +107,17 @@ class Event
     }
 
     #[ORM\OneToMany(mappedBy: "id_event", targetEntity: PlanningEvents::class)]
-    private Collection $PlanningEventss;
+    private Collection $PlanningEvents;
 
         public function getPlanningEventss(): Collection
         {
-            return $this->PlanningEventss;
+            return $this->PlanningEvents;
         }
     
         public function addPlanningEvents(PlanningEvents $PlanningEvents): self
         {
-            if (!$this->PlanningEventss->contains($PlanningEvents)) {
-                $this->PlanningEventss[] = $PlanningEvents;
+            if (!$this->PlanningEvents->contains($PlanningEvents)) {
+                $this->PlanningEvents[] = $PlanningEvents;
                 $PlanningEvents->setId_event($this);
             }
     
@@ -126,7 +126,7 @@ class Event
     
         public function removePlanningEvents(PlanningEvents $PlanningEvents): self
         {
-            if ($this->PlanningEventss->removeElement($PlanningEvents)) {
+            if ($this->PlanningEvents->removeElement($PlanningEvents)) {
                 // set the owning side to null (unless already changed)
                 if ($PlanningEvents->getId_event() === $this) {
                     $PlanningEvents->setId_event(null);
